@@ -23,7 +23,6 @@ class tableViewCellTableViewCell: UITableViewCell {
         feedsCollectionView.delegate = self
         populateFeeds()
         
-    
         
     }
 
@@ -36,7 +35,9 @@ class tableViewCellTableViewCell: UITableViewCell {
 }
 extension tableViewCellTableViewCell : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150, height: 250)
+        //for dynamic  cell size
+        
+        return CGSize(width: 120, height: 250)
     }
 }
 
