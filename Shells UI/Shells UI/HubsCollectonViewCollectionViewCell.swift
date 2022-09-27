@@ -10,7 +10,5 @@ import UIKit
 class HubsCollectonViewCollectionViewCell: UICollectionViewCell{
     
     @IBOutlet var hubs: UILabel!
-    
-  
- 
+
 }

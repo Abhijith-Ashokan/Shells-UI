@@ -8,12 +8,13 @@
 import UIKit
 
 class tableViewCellTableViewCell: UITableViewCell {
-
-    var feedTitles : [movieTitles] = []
+    
     let layout = UICollectionViewLayout()
     @IBOutlet var feedLabel: UILabel!
     @IBOutlet var feedButton: UIButton!
-    
+    var jsonData : [Hubs]? = nil
+    var numberofFeeds : Int = 0
+
     @IBOutlet var feedsCollectionView: UICollectionView!
     
     override func awakeFromNib() {
@@ -22,8 +23,8 @@ class tableViewCellTableViewCell: UITableViewCell {
         feedsCollectionView.dataSource = self
         feedsCollectionView.delegate = self
         populateFeeds()
-        
-        
+        parseJSON()
+            
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,40 +32,56 @@ class tableViewCellTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func parseJSON(){
 
+        guard let url = Bundle.main.url(forResource: "sampleJSON", withExtension: "json")else{
+            return
+        }
+
+        do{
+            let data = try Data(contentsOf: url)
+            jsonData = try JSONDecoder().decode([Hubs].self, from: data)
+            numberofFeeds = jsonData!.count
+            return
+        }
+        catch{
+            print("Parse error:\(error)")
+        }
+    }
 }
+
 extension tableViewCellTableViewCell : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //for dynamic  cell size
         
-        return CGSize(width: 120, height: 250)
+        return CGSize(width: 150, height: 176)
     }
 }
 
 extension tableViewCellTableViewCell : UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        feedTitles.count
+        return self.numberofFeeds
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "titlesCell", for: indexPath) as? titlesCollectionViewCell else{
             return UICollectionViewCell()
         }
-        cell.titlesImageView.image = feedTitles[indexPath.row].titleImage
-        cell.titlesProgressView.progress = feedTitles[indexPath.row].progress
-        cell.titlesLabel.text = feedTitles[indexPath.row].titleLabel
+        //cell.titlesImageView.image = feedTitles[indexPath.row].titleImage
+        
+        feedLabel.text = jsonData![indexPath.row].HubData[indexPath.row].FeedName
+        cell.titlesProgressView.progress = jsonData![indexPath.row].HubData[indexPath.row].FeedItems[indexPath.row].Progress
+        cell.titlesLabel.text =  jsonData![indexPath.row].HubData[indexPath.row].FeedItems[indexPath.row].TitleName
+        
         return cell
     }
    
     
     
     func populateFeeds(){
-        feedTitles.append(movieTitles(titleImage:UIImage(named: "titleArt")!, progress: 0.0, titleLabel:"title0"))
-        feedTitles.append(movieTitles(titleImage:UIImage(named: "titleArt")!, progress: 0.5, titleLabel:"title1"))
-        feedTitles.append(movieTitles(titleImage:UIImage(named: "titleArt")!, progress: 0.8, titleLabel:"title2"))
-        feedTitles.append(movieTitles(titleImage:UIImage(named: "titleArt")!, progress: 0.9, titleLabel:"title3"))
-        feedTitles.append(movieTitles(titleImage:UIImage(named: "titleArt")!, progress: 0.2, titleLabel:"title4"))
-        
+
+        feedsCollectionView.reloadData()
     }
    
 }

@@ -7,13 +7,16 @@
 
 import UIKit
 
-class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource  {
-   
+class ViewController:
+    
+    UIViewController,UICollectionViewDelegate,UICollectionViewDataSource  {
+    
     @IBOutlet var hubsCollectionView: UICollectionView!
     @IBOutlet var feedsAndTitlesTableView: UITableView!
-    var hubsTitles :[String] = ["You","Live TV","On Demand", "Test Bug"]
+    // var hubsTitles :[String] = ["You","Live TV","On Demand", "Test Bug"]
+    var jsonData : [Hubs]? = nil
+    var noOfFeedsInHub : Int = 0
     
-   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,10 +27,26 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         //self.hubsCollectionView.collectionViewLayout=UICollectionViewLayout()
         feedsAndTitlesTableView.dataSource = self
         feedsAndTitlesTableView.delegate = self
+        parseJSON()
+        noOfFeedsInHub = jsonData![0].HubData.count
+    }
+    func parseJSON(){
         
+        guard let url = Bundle.main.url(forResource: "sampleJSON", withExtension: "json")else{
+            return
+        }
+        
+        do{
+            let data = try Data(contentsOf: url)
+            jsonData = try JSONDecoder().decode([Hubs].self, from: data)
+            return
+        }
+        catch{
+            print("Parse error:\(error)")
+        }
     }
     
-   
+    
     private func setNavigationBarImage(){
         let logo = UIImage(named: "Logo")
         let imageView = UIImageView(image: logo)
@@ -36,28 +55,35 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         
     }
     private func setupView(){
-        
         setNavigationBarImage()
-        
     }
-
+    
+    //feeds collection view delegate methods
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return hubsTitles.count
+        // print("testdata\(jsonData!.count)")
+        return jsonData!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HubsCollectonViewCollectionViewCell
-        cell.hubs.text = hubsTitles[indexPath.row]
+        cell.hubs.text = jsonData![indexPath.row].HubName
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("selected collectionview cell at indexpath:\(indexPath.row)")
+        print("selected hubscollectionview cell at indexpath:\(indexPath.row)")
+        noOfFeedsInHub = jsonData![indexPath.row].HubData.count
+        //print("testdata:\(noOfFeedsInHub)")
+        feedsAndTitlesTableView.reloadData()
         
     }
+}
+
+//feeds tableview delegate methods
+    extension ViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return 20
+       return noOfFeedsInHub
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
