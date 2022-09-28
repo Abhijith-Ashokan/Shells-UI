@@ -75,11 +75,16 @@ extension tableViewCellTableViewCell : UICollectionViewDelegate,UICollectionView
         if let data = feedsData?[indexPath.row]{
             
             print(data)
+//            cell.feedsTitles = data
+//            self.titlesData = data.FeedItems
+//            cell.titlesLabel.text = titlesData?[indexPath.row].Description
+//            cell.titlesProgressView.progress = (titlesData?[indexPath.row].Progress)!
+//            cell.showNameLabel.text = titlesData?[indexPath.row].TitleName
             cell.feedsTitles = data
             self.titlesData = data.FeedItems
-            cell.titlesLabel.text = titlesData?[indexPath.row].Description
-            cell.titlesProgressView.progress = (titlesData?[indexPath.row].Progress)!
-            cell.showNameLabel.text = titlesData?[indexPath.row].TitleName
+            cell.titlesLabel.text = titlesData?.first?.Description ?? ""
+            cell.titlesProgressView.progress = titlesData?.first?.Progress ?? 0
+            cell.showNameLabel.text = titlesData?.first?.TitleName ?? ""
             
         }
         return cell
