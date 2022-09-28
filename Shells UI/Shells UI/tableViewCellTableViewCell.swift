@@ -9,12 +9,14 @@ import UIKit
 
 class tableViewCellTableViewCell: UITableViewCell {
     
+    
     let layout = UICollectionViewLayout()
     @IBOutlet var feedLabel: UILabel!
     @IBOutlet var feedButton: UIButton!
     var jsonData : [Hubs]? = nil
     var numberofFeeds : Int = 0
     var feedsData : [HData]? = nil
+    var titlesData : [titles]? = nil
    
     @IBOutlet var feedsCollectionView: UICollectionView!
     
@@ -48,6 +50,7 @@ class tableViewCellTableViewCell: UITableViewCell {
             print("Parse error:\(error)")
         }
     }
+    
 }
 
 extension tableViewCellTableViewCell : UICollectionViewDelegateFlowLayout{
@@ -57,30 +60,33 @@ extension tableViewCellTableViewCell : UICollectionViewDelegateFlowLayout{
         return CGSize(width: 108, height: 176)
     }
 }
-
+//titles collectionview delegate methods
 extension tableViewCellTableViewCell : UICollectionViewDelegate,UICollectionViewDataSource{
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return jsonData!.count
+        return (feedsData?.count)!
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "titlesCell", for: indexPath) as? titlesCollectionViewCell else{
             return UICollectionViewCell()
         }
-    //        cell.titlesImageView.image = feedTitles[indexPath.row].titleImage
-
-        
-        feedLabel.text = jsonData![indexPath.row].HubData[indexPath.row].FeedName
-        cell.titlesProgressView.progress = jsonData![indexPath.row].HubData[indexPath.row].FeedItems[indexPath.row].Progress
-        cell.titlesLabel.text =  jsonData![indexPath.row].HubData[indexPath.row].FeedItems[indexPath.row].TitleName
-
+        if let data = feedsData?[indexPath.row]{
+            
+            print(data)
+            cell.feedsTitles = data
+            self.titlesData = data.FeedItems
+            cell.titlesLabel.text = titlesData?[indexPath.row].Description
+            cell.titlesProgressView.progress = (titlesData?[indexPath.row].Progress)!
+            cell.showNameLabel.text = titlesData?[indexPath.row].TitleName
+            
+        }
         return cell
+       
     }
 
-    
-    
     func populateFeeds(){
-
         feedsCollectionView.reloadData()
     }
    

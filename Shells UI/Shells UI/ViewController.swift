@@ -74,9 +74,19 @@ class ViewController:
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("selected hubscollectionview cell at indexpath:\(indexPath.row)")
         self.feedsData = self.jsonData?[indexPath.row].HubData
-        noOfFeedsInHub = feedsData?.count
+        //noOfFeedsInHub = feedsData?.count
         //print("testdata:\(noOfFeedsInHub)")
         feedsAndTitlesTableView.reloadData()
+        
+    }
+    func getFeedsData () ->[HData]?{
+       
+        if self.feedsData != nil{
+            return self.feedsData
+        }
+        else{
+            return self.jsonData?[0].HubData
+        }
         
     }
 }
@@ -93,8 +103,16 @@ class ViewController:
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellfeeds", for: indexPath)
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellfeeds", for: indexPath) as! tableViewCellTableViewCell
+        if self.feedsData != nil{
+            cell.feedsData = self.feedsData
+            cell.feedLabel.text = feedsData?[indexPath.row].FeedName
+            return cell
+        }
+        else{
+            cell.feedsData = jsonData![0].HubData
+            return cell
+        }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200

@@ -75,18 +75,18 @@
         {
             "HubName": "LIVE TV",
             "HubData": [{
-                    "FeedName": "Continue",
+                    "FeedName": "On Now",
                     "FeedItems": [{
-                            "TitleName": "12 Years a Slave",
+                            "TitleName": "Spiral",
                             "img": "",
                             "Progress": 0.9,
-                            "Description": "2020 | G"
+                            "Description": "360 STARZW"
                         },
                         {
-                            "TitleName": "3 Idiots",
+                            "TitleName": "Seinfeld",
                             "img": "",
                             "Progress": 0.1,
-                            "Description": "2017 | PG-13"
+                            "Description": "402 KTVUHD"
                         },
                         {
                             "TitleName": "Moon Knight NEW",
@@ -97,24 +97,24 @@
                     ]
                 },
                 {
-                    "FeedName": "Favourites",
+                    "FeedName": "Recently Aired",
                     "FeedItems": [{
-                            "TitleName": "Whiplash",
+                            "TitleName": "Entertainment Tonight",
                             "img": "",
                             "Progress": 0.8,
-                            "Description": "2014 | R"
+                            "Description": "Today 12:00 PM"
                         },
                         {
-                            "TitleName": "Dangal",
+                            "TitleName": "Focus on PBS",
                             "img": "",
                             "Progress": 0.1,
-                            "Description": "2016 | G"
+                            "Description": "Today 11.30 PM"
                         }
                     ]
 
                 },
                 {
-                    "FeedName": "Purchases",
+                    "FeedName": "Trending",
                     "FeedItems": [{
                             "TitleName": "Bad Teacher",
                             "img": "",
@@ -135,38 +135,30 @@
                         }
                     ]
                 },
-                {
-                    "FeedName": "Recordings",
-                    "FeedItems": [{
-                        "TitleName": "Jimmel Kimmel Live",
-                        "img": "",
-                        "Progress": 0.8,
-                        "Description": "S20"
-                    }]
-                }
+                
             ]
         },
         {
-            "HubName": "VOD",
+            "HubName": "On Demand",
             "HubData": [{
-                    "FeedName": "Continue",
+                    "FeedName": "Movies",
                     "FeedItems": [{
-                            "TitleName": "12 Years a Slave",
+                            "TitleName": "Big Buck Bunny",
                             "img": "",
                             "Progress": 0.9,
-                            "Description": "2020 | G"
+                            "Description": "2008 | G"
                         },
                         {
-                            "TitleName": "3 Idiots",
+                            "TitleName": "Western Stars",
                             "img": "",
                             "Progress": 0.1,
-                            "Description": "2017 | PG-13"
+                            "Description": "2019 | PG"
                         },
                         {
-                            "TitleName": "Moon Knight NEW",
+                            "TitleName": "Eurosports",
                             "img": "",
                             "Progress": 0.5,
-                            "Description": "2022 | PG-13"
+                            "Description": "2010 | R"
                         }
                     ]
                 },

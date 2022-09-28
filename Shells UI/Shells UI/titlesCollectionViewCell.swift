@@ -16,4 +16,6 @@ class titlesCollectionViewCell: UICollectionViewCell {
     @IBOutlet var titlesLabel: UILabel!
     
     @IBOutlet var showNameLabel: UILabel!
+    
+    var feedsTitles : HData?
 }
