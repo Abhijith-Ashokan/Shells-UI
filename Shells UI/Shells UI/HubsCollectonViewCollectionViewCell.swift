@@ -11,4 +11,5 @@ class HubsCollectonViewCollectionViewCell: UICollectionViewCell{
     
     @IBOutlet var hubs: UILabel!
 
+    //var hubdata : [String:Any]?
 }

@@ -13,9 +13,9 @@ class ViewController:
     
     @IBOutlet var hubsCollectionView: UICollectionView!
     @IBOutlet var feedsAndTitlesTableView: UITableView!
-    // var hubsTitles :[String] = ["You","Live TV","On Demand", "Test Bug"]
     var jsonData : [Hubs]? = nil
-    var noOfFeedsInHub : Int = 0
+    var noOfFeedsInHub : Int? = 0
+    var feedsData : [HData]? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class ViewController:
         feedsAndTitlesTableView.dataSource = self
         feedsAndTitlesTableView.delegate = self
         parseJSON()
-        noOfFeedsInHub = jsonData![0].HubData.count
+        
     }
     func parseJSON(){
         
@@ -67,23 +67,29 @@ class ViewController:
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HubsCollectonViewCollectionViewCell
         cell.hubs.text = jsonData![indexPath.row].HubName
-        
+        print(jsonData![indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("selected hubscollectionview cell at indexpath:\(indexPath.row)")
-        noOfFeedsInHub = jsonData![indexPath.row].HubData.count
+        self.feedsData = self.jsonData?[indexPath.row].HubData
+        noOfFeedsInHub = feedsData?.count
         //print("testdata:\(noOfFeedsInHub)")
         feedsAndTitlesTableView.reloadData()
         
     }
 }
-
 //feeds tableview delegate methods
     extension ViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return noOfFeedsInHub
+        
+        if self.feedsData != nil{
+            return (self.feedsData?.count)!
+        }
+        else{
+            return (jsonData?[0].HubData.count)!
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -96,7 +102,6 @@ class ViewController:
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
-        
 }
 
 extension ViewController:UICollectionViewDelegateFlowLayout{

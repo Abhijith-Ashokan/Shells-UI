@@ -14,7 +14,8 @@ class tableViewCellTableViewCell: UITableViewCell {
     @IBOutlet var feedButton: UIButton!
     var jsonData : [Hubs]? = nil
     var numberofFeeds : Int = 0
-
+    var feedsData : [HData]? = nil
+   
     @IBOutlet var feedsCollectionView: UICollectionView!
     
     override func awakeFromNib() {
@@ -38,11 +39,9 @@ class tableViewCellTableViewCell: UITableViewCell {
         guard let url = Bundle.main.url(forResource: "sampleJSON", withExtension: "json")else{
             return
         }
-
         do{
             let data = try Data(contentsOf: url)
             jsonData = try JSONDecoder().decode([Hubs].self, from: data)
-            numberofFeeds = jsonData!.count
             return
         }
         catch{
@@ -55,28 +54,29 @@ extension tableViewCellTableViewCell : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //for dynamic  cell size
         
-        return CGSize(width: 150, height: 176)
+        return CGSize(width: 108, height: 176)
     }
 }
 
 extension tableViewCellTableViewCell : UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.numberofFeeds
+        return jsonData!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "titlesCell", for: indexPath) as? titlesCollectionViewCell else{
             return UICollectionViewCell()
         }
-        //cell.titlesImageView.image = feedTitles[indexPath.row].titleImage
+    //        cell.titlesImageView.image = feedTitles[indexPath.row].titleImage
+
         
         feedLabel.text = jsonData![indexPath.row].HubData[indexPath.row].FeedName
         cell.titlesProgressView.progress = jsonData![indexPath.row].HubData[indexPath.row].FeedItems[indexPath.row].Progress
         cell.titlesLabel.text =  jsonData![indexPath.row].HubData[indexPath.row].FeedItems[indexPath.row].TitleName
-        
+
         return cell
     }
-   
+
     
     
     func populateFeeds(){
