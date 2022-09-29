@@ -1,0 +1,199 @@
+ [{
+     "HubName": "You",
+     "HubData": [{
+             "FeedName": "Continue",
+             "FeedItems": [{
+                     "TitleName": "12 Years a Slave",
+                     "img": "",
+                            "Progress": 0.9,
+                            "Description": "2020 | G"
+                        },
+                        {
+                            "TitleName": "3 Idiots",
+                            "img": "",
+                            "Progress": 0.1,
+                            "Description": "2017 | PG-13"
+                        },
+                        {
+                            "TitleName": "Moon Knight NEW",
+                            "img": "",
+                            "Progress": 0.5,
+                            "Description": "2022 | PG-13"
+                        }
+                    ]
+                },
+                {
+                    "FeedName": "Favourites",
+                    "FeedItems": [{
+                            "TitleName": "Whiplash",
+                            "img": "",
+                            "Progress": 0.8,
+                            "Description": "2014 | R"
+                        },
+                        {
+                            "TitleName": "Dangal",
+                            "img": "",
+                            "Progress": 0.1,
+                            "Description": "2016 | G"
+                        }
+                    ]
+
+                },
+                {
+                    "FeedName": "Purchases",
+                    "FeedItems": [{
+                            "TitleName": "Bad Teacher",
+                            "img": "",
+                            "Progress": 0.3,
+                            "Description": "EXP : 3:45PM"
+                        },
+                        {
+                            "TitleName": "Animal Planet_2",
+                            "img": "",
+                            "Progress": 0.8,
+                            "Description": "EXP : 3:45PM"
+                        },
+                        {
+                            "TitleName": "Casablanca",
+                            "img": "",
+                            "Progress": 0.8,
+                            "Description": "EXP : 12/31"
+                        }
+                    ]
+                },
+                {
+                    "FeedName": "Recordings",
+                    "FeedItems": [{
+                        "TitleName": "Jimmel Kimmel Live",
+                        "img": "",
+                        "Progress": 0.8,
+                        "Description": "S20"
+                    }]
+                }
+            ]
+        },
+        {
+            "HubName": "Live TV",
+            "HubData": [{
+                    "FeedName": "On Now",
+                    "FeedItems": [{
+                            "TitleName": "Spiral",
+                            "img": "",
+                            "Progress": 0.9,
+                            "Description": "360 STARZW"
+                        },
+                        {
+                            "TitleName": "Seinfeld",
+                            "img": "",
+                            "Progress": 0.1,
+                            "Description": "402 KTVUHD"
+                        },
+                        {
+                            "TitleName": "Moon Knight NEW",
+                            "img": "",
+                            "Progress": 0.5,
+                            "Description": "2022 | PG-13"
+                        }
+                    ]
+                },
+                {
+                    "FeedName": "Recently Aired",
+                    "FeedItems": [{
+                            "TitleName": "Entertainment Tonight",
+                            "img": "",
+                            "Progress": 0.8,
+                            "Description": "Today 12:00 PM"
+                        },
+                        {
+                            "TitleName": "Focus on PBS",
+                            "img": "",
+                            "Progress": 0.1,
+                            "Description": "Today 11.30 PM"
+                        }
+                    ]
+
+                },
+                {
+                    "FeedName": "Trending",
+                    "FeedItems": [{
+                            "TitleName": "Bad Teacher",
+                            "img": "",
+                            "Progress": 0.3,
+                            "Description": "EXP : 3:45PM"
+                        },
+                        {
+                            "TitleName": "Animal Planet_2",
+                            "img": "",
+                            "Progress": 0.8,
+                            "Description": "EXP : 3:45PM"
+                        },
+                        {
+                            "TitleName": "Casablanca",
+                            "img": "",
+                            "Progress": 0.8,
+                            "Description": "EXP : 12/31"
+                        }
+                    ]
+                },
+                
+            ]
+        },
+        {
+            "HubName": "On Demand",
+            "HubData": [{
+                    "FeedName": "Movies",
+                    "FeedItems": [{
+                            "TitleName": "Big Buck Bunny",
+                            "img": "",
+                            "Progress": 0.9,
+                            "Description": "2008 | G"
+                        },
+                        {
+                            "TitleName": "Western Stars",
+                            "img": "",
+                            "Progress": 0.1,
+                            "Description": "2019 | PG"
+                        },
+                        {
+                            "TitleName": "Eurosports",
+                            "img": "",
+                            "Progress": 0.5,
+                            "Description": "2010 | R"
+                        }
+                    ]
+                },
+                {
+                    "FeedName": "Purchases",
+                    "FeedItems": [{
+                            "TitleName": "Bad Teacher",
+                            "img": "",
+                            "Progress": 0.3,
+                            "Description": "EXP : 3:45PM"
+                        },
+                        {
+                            "TitleName": "Animal Planet_2",
+                            "img": "",
+                            "Progress": 0.8,
+                            "Description": "EXP : 3:45PM"
+                        },
+                        {
+                            "TitleName": "Casablanca",
+                            "img": "",
+                            "Progress": 0.8,
+                            "Description": "EXP : 12/31"
+                        }
+                    ]
+                },
+                {
+                    "FeedName": "Recordings",
+                    "FeedItems": [{
+                        "TitleName": "Jimmel Kimmel Live",
+                        "img": "",
+                        "Progress": 0.8,
+                        "Description": "S20"
+                    }]
+                }
+            ]
+        }
+    ]
+
