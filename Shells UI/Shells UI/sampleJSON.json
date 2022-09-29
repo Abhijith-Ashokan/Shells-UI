@@ -1,5 +1,5 @@
  [{
-     "HubName": "YOU",
+     "HubName": "You",
      "HubData": [{
              "FeedName": "Continue",
              "FeedItems": [{
@@ -73,7 +73,7 @@
             ]
         },
         {
-            "HubName": "LIVE TV",
+            "HubName": "Live TV",
             "HubData": [{
                     "FeedName": "On Now",
                     "FeedItems": [{

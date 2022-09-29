@@ -10,7 +10,6 @@ import UIKit
 class ViewController:
     
     UIViewController,UICollectionViewDelegate,UICollectionViewDataSource  {
-    
     @IBOutlet var hubsCollectionView: UICollectionView!
     @IBOutlet var feedsAndTitlesTableView: UITableView!
     var jsonData : [Hubs]? = nil
@@ -71,21 +70,18 @@ class ViewController:
         print("selected hubscollectionview cell at indexpath:\(indexPath.row)")
         self.feedsData = self.jsonData?[indexPath.row].HubData
         feedsAndTitlesTableView.reloadData()
-        
     }
 }
 
 //feeds tableview delegate methods
     extension ViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            
         return (self.feedsData?.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellfeeds", for: indexPath) as! tableViewCellTableViewCell
         if self.feedsData != nil{
-            cell.feedButton.titleLabel?.text = "All on \(feedsData![indexPath.row].FeedName) >"
             cell.feeds = self.feedsData?[indexPath.row]
             cell.feedLabel.text = feedsData?[indexPath.row].FeedName
             cell.feedsCollectionView.reloadData()

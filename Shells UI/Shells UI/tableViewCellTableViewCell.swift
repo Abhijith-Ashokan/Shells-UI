@@ -21,7 +21,6 @@ class tableViewCellTableViewCell: UITableViewCell {
         // Initialization code
         feedsCollectionView.dataSource = self
         feedsCollectionView.delegate = self
-        populateFeeds()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -52,18 +51,11 @@ extension tableViewCellTableViewCell : UICollectionViewDelegate,UICollectionView
             return UICollectionViewCell()
         }
         if let data = feeds?.FeedItems[indexPath.row]{
-            //print(data)
             cell.titlesLabel.text = data.Description
             cell.titlesProgressView.progress = data.Progress
             cell.showNameLabel.text = data.TitleName
-            
         }
         return cell
     }
-
-    func populateFeeds(){
-        feedsCollectionView.reloadData()
-    }
-   
 }
 
