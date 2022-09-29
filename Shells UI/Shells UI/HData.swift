@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct HData : Codable {
+struct Feeds : Codable {
     let FeedName : String
     let FeedItems : [titles]
 }

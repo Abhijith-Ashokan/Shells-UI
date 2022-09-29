@@ -15,7 +15,7 @@ class ViewController:
     @IBOutlet var feedsAndTitlesTableView: UITableView!
     var jsonData : [Hubs]? = nil
     var noOfFeedsInHub : Int? = 0
-    var feedsData : [HData]? = nil
+    var feedsData : [Feeds]? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,7 @@ class ViewController:
         feedsAndTitlesTableView.dataSource = self
         feedsAndTitlesTableView.delegate = self
         parseJSON()
+        self.feedsData = self.jsonData?[0].HubData
         
     }
     func parseJSON(){
@@ -79,16 +80,16 @@ class ViewController:
         feedsAndTitlesTableView.reloadData()
         
     }
-    func getFeedsData () ->[HData]?{
-       
-        if self.feedsData != nil{
-            return self.feedsData
-        }
-        else{
-            return self.jsonData?[0].HubData
-        }
-        
-    }
+//    func getFeedsData () ->[Feeds]?{
+//       
+//        if self.feedsData != nil{
+//            return self.feedsData
+//        }
+//        else{
+//            return self.jsonData?[0].HubData
+//        }
+//        
+//    }
 }
 //feeds tableview delegate methods
     extension ViewController : UITableViewDelegate,UITableViewDataSource{
@@ -104,15 +105,13 @@ class ViewController:
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellfeeds", for: indexPath) as! tableViewCellTableViewCell
+        print("IndexPath:\(indexPath.row)")
+        print("feedsData:\(feedsData)")
         if self.feedsData != nil{
-            cell.feedsData = self.feedsData
+            cell.feeds = self.feedsData?[indexPath.row]
             cell.feedLabel.text = feedsData?[indexPath.row].FeedName
-            return cell
         }
-        else{
-            cell.feedsData = jsonData![0].HubData
-            return cell
-        }
+        return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200

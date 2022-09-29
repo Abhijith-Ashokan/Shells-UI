@@ -10,5 +10,5 @@ import Foundation
 
 struct Hubs : Codable{
     let HubName : String
-    let HubData : [HData]
+    let HubData : [Feeds]
 }

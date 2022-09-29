@@ -13,10 +13,8 @@ class tableViewCellTableViewCell: UITableViewCell {
     let layout = UICollectionViewLayout()
     @IBOutlet var feedLabel: UILabel!
     @IBOutlet var feedButton: UIButton!
-    var jsonData : [Hubs]? = nil
     var numberofFeeds : Int = 0
-    var feedsData : [HData]? = nil
-    var titlesData : [titles]? = nil
+    var feeds : Feeds? = nil
    
     @IBOutlet var feedsCollectionView: UICollectionView!
     
@@ -26,7 +24,7 @@ class tableViewCellTableViewCell: UITableViewCell {
         feedsCollectionView.dataSource = self
         feedsCollectionView.delegate = self
         populateFeeds()
-        parseJSON()
+        //parseJSON()
             
     }
 
@@ -35,22 +33,22 @@ class tableViewCellTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    func parseJSON(){
-
-        guard let url = Bundle.main.url(forResource: "sampleJSON", withExtension: "json")else{
-            return
-        }
-        do{
-            let data = try Data(contentsOf: url)
-            jsonData = try JSONDecoder().decode([Hubs].self, from: data)
-            return
-        }
-        catch{
-            print("Parse error:\(error)")
-        }
-    }
-    
+//
+//    func parseJSON(){
+//
+//        guard let url = Bundle.main.url(forResource: "sampleJSON", withExtension: "json")else{
+//            return
+//        }
+//        do{
+//            let data = try Data(contentsOf: url)
+//            jsonData = try JSONDecoder().decode([Hubs].self, from: data)
+//            return
+//        }
+//        catch{
+//            print("Parse error:\(error)")
+//        }
+//    }
+//
 }
 
 extension tableViewCellTableViewCell : UICollectionViewDelegateFlowLayout{
@@ -64,7 +62,8 @@ extension tableViewCellTableViewCell : UICollectionViewDelegateFlowLayout{
 extension tableViewCellTableViewCell : UICollectionViewDelegate,UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (feedsData?.count)!
+        
+        return (feeds?.FeedItems.count) ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -72,19 +71,17 @@ extension tableViewCellTableViewCell : UICollectionViewDelegate,UICollectionView
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "titlesCell", for: indexPath) as? titlesCollectionViewCell else{
             return UICollectionViewCell()
         }
-        if let data = feedsData?[indexPath.row]{
-            
+        if let data = feeds?.FeedItems[indexPath.row]{
             print(data)
 //            cell.feedsTitles = data
 //            self.titlesData = data.FeedItems
 //            cell.titlesLabel.text = titlesData?[indexPath.row].Description
 //            cell.titlesProgressView.progress = (titlesData?[indexPath.row].Progress)!
 //            cell.showNameLabel.text = titlesData?[indexPath.row].TitleName
-            cell.feedsTitles = data
-            self.titlesData = data.FeedItems
-            cell.titlesLabel.text = titlesData?.first?.Description ?? ""
-            cell.titlesProgressView.progress = titlesData?.first?.Progress ?? 0
-            cell.showNameLabel.text = titlesData?.first?.TitleName ?? ""
+           // cell.feedsTitles = data.f
+            cell.titlesLabel.text = data.Description
+            cell.titlesProgressView.progress = data.Progress
+            cell.showNameLabel.text = data.TitleName
             
         }
         return cell
