@@ -60,7 +60,7 @@ class ViewController:
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HubsCollectonViewCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HubsCollectionViewCell
         cell.hubs.text = jsonData![indexPath.row].HubName
         
         return cell
@@ -80,7 +80,7 @@ class ViewController:
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellfeeds", for: indexPath) as! tableViewCellTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellfeeds", for: indexPath) as! feedsTableViewCell
         if self.feedsData != nil{
             cell.feeds = self.feedsData?[indexPath.row]
             cell.feedLabel.text = feedsData?[indexPath.row].FeedName

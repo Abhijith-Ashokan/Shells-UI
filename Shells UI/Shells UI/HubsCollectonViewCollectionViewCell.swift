@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HubsCollectonViewCollectionViewCell: UICollectionViewCell{
+class HubsCollectionViewCell: UICollectionViewCell{
     
     @IBOutlet var hubs: UILabel!
 
