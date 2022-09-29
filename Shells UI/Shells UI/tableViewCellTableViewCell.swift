@@ -9,11 +9,9 @@ import UIKit
 
 class tableViewCellTableViewCell: UITableViewCell {
     
-    
     let layout = UICollectionViewLayout()
     @IBOutlet var feedLabel: UILabel!
     @IBOutlet var feedButton: UIButton!
-    var numberofFeeds : Int = 0
     var feeds : Feeds? = nil
    
     @IBOutlet var feedsCollectionView: UICollectionView!
@@ -24,8 +22,6 @@ class tableViewCellTableViewCell: UITableViewCell {
         feedsCollectionView.dataSource = self
         feedsCollectionView.delegate = self
         populateFeeds()
-        //parseJSON()
-            
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -33,22 +29,6 @@ class tableViewCellTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-//
-//    func parseJSON(){
-//
-//        guard let url = Bundle.main.url(forResource: "sampleJSON", withExtension: "json")else{
-//            return
-//        }
-//        do{
-//            let data = try Data(contentsOf: url)
-//            jsonData = try JSONDecoder().decode([Hubs].self, from: data)
-//            return
-//        }
-//        catch{
-//            print("Parse error:\(error)")
-//        }
-//    }
-//
 }
 
 extension tableViewCellTableViewCell : UICollectionViewDelegateFlowLayout{
@@ -72,20 +52,13 @@ extension tableViewCellTableViewCell : UICollectionViewDelegate,UICollectionView
             return UICollectionViewCell()
         }
         if let data = feeds?.FeedItems[indexPath.row]{
-            print(data)
-//            cell.feedsTitles = data
-//            self.titlesData = data.FeedItems
-//            cell.titlesLabel.text = titlesData?[indexPath.row].Description
-//            cell.titlesProgressView.progress = (titlesData?[indexPath.row].Progress)!
-//            cell.showNameLabel.text = titlesData?[indexPath.row].TitleName
-           // cell.feedsTitles = data.f
+            //print(data)
             cell.titlesLabel.text = data.Description
             cell.titlesProgressView.progress = data.Progress
             cell.showNameLabel.text = data.TitleName
             
         }
         return cell
-       
     }
 
     func populateFeeds(){
