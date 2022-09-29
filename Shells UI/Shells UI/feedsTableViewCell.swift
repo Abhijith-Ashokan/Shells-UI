@@ -12,7 +12,11 @@ class feedsTableViewCell: UITableViewCell {
     let layout = UICollectionViewLayout()
     @IBOutlet var feedLabel: UILabel!
     @IBOutlet var feedButton: UIButton!
-    var feeds : Feeds? = nil
+    var feeds : Feeds? = nil{
+        didSet{
+            feedsCollectionView.reloadData()
+        }
+    }
    
     @IBOutlet var feedsCollectionView: UICollectionView!
     

@@ -56,7 +56,7 @@ class ViewController:
     
     //feeds collection view delegate methods
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return jsonData!.count
+        return jsonData?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -84,7 +84,6 @@ class ViewController:
         if self.feedsData != nil{
             cell.feeds = self.feedsData?[indexPath.row]
             cell.feedLabel.text = feedsData?[indexPath.row].FeedName
-            cell.feedsCollectionView.reloadData()
         }
         return cell
     }
