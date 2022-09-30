@@ -74,8 +74,8 @@
 			children = (
 				44805A9F28C783E0008BBF91 /* AppDelegate.swift */,
 				44805AA128C783E0008BBF91 /* SceneDelegate.swift */,
-				44805AB728C896EA008BBF91 /* HubsCollectionViewCell.swift */,
 				44805AA328C783E0008BBF91 /* ViewController.swift */,
+				44805AB728C896EA008BBF91 /* HubsCollectionViewCell.swift */,
 				44E65C8428C9F18D00A2837D /* feedsTableViewCell.swift */,
 				443A57F628D1B91500014AAC /* titlesCollectionViewCell.swift */,
 				44EDC70028DC439B00DA5DA8 /* sampleJSON.json */,

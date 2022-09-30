@@ -11,4 +11,9 @@ class HubsCollectionViewCell: UICollectionViewCell{
     
     @IBOutlet var hubs: UILabel!
 
+    override var isSelected: Bool {
+           didSet {
+               self.contentView.backgroundColor = isSelected ? UIColor.gray : UIColor.clear
+           }
+       }
 }

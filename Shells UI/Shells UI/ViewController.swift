@@ -26,7 +26,6 @@ class ViewController:
         feedsAndTitlesTableView.delegate = self
         parseJSON()
         self.feedsData = self.jsonData?[0].HubData
-        
     }
     func parseJSON(){
         
