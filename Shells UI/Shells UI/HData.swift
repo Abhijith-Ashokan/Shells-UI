@@ -11,4 +11,5 @@ import Foundation
 struct Feeds : Codable {
     let FeedName : String
     let FeedItems : [titles]
+    let CellSize : [String : Int]
 }

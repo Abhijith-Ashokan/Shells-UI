@@ -72,7 +72,7 @@ class ViewController:
     }
 }
 
-//feeds tableview delegate methods
+//feeds tableview datasource & delegate methods
     extension ViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (self.feedsData?.count)!
@@ -89,7 +89,7 @@ class ViewController:
         
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 220
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40

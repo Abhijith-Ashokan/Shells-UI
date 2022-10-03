@@ -114,14 +114,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="358" height="207"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DnO-2Y-lmx">
-                                                    <rect key="frame" x="259.33333333333331" y="0.0" width="98.666666666666686" height="31"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="31" id="kAF-hy-4gk"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="View All &gt;"/>
-                                                </button>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Uh8-bc-3Sd">
                                                     <rect key="frame" x="0.0" y="30" width="358" height="177"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -227,16 +219,24 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DnO-2Y-lmx">
+                                                    <rect key="frame" x="239.33333333333334" y="4" width="98.666666666666657" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="vLB-hy-AcY"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="View All &gt;"/>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="Qhe-oN-j9F" firstAttribute="leading" secondItem="f5H-Jm-oam" secondAttribute="leading" constant="20" id="383-b3-cuE"/>
-                                                <constraint firstAttribute="bottom" secondItem="DnO-2Y-lmx" secondAttribute="bottom" constant="176" id="6l3-5i-QP7"/>
                                                 <constraint firstItem="Qhe-oN-j9F" firstAttribute="top" secondItem="f5H-Jm-oam" secondAttribute="top" constant="4" id="9oo-8y-h13"/>
+                                                <constraint firstAttribute="trailing" secondItem="DnO-2Y-lmx" secondAttribute="trailing" constant="20" id="Dp0-K6-ujI"/>
+                                                <constraint firstItem="Uh8-bc-3Sd" firstAttribute="top" secondItem="DnO-2Y-lmx" secondAttribute="bottom" constant="4" id="NXj-ee-NKr"/>
                                                 <constraint firstAttribute="bottom" secondItem="Uh8-bc-3Sd" secondAttribute="bottom" id="SEg-8f-18i"/>
                                                 <constraint firstAttribute="trailing" secondItem="Uh8-bc-3Sd" secondAttribute="trailing" id="ZOC-Yo-Tot"/>
                                                 <constraint firstItem="Uh8-bc-3Sd" firstAttribute="top" secondItem="Qhe-oN-j9F" secondAttribute="bottom" constant="4" id="ifW-Sm-Uzk"/>
-                                                <constraint firstAttribute="trailing" secondItem="DnO-2Y-lmx" secondAttribute="trailing" id="m2F-TZ-AcE"/>
                                                 <constraint firstItem="Uh8-bc-3Sd" firstAttribute="leading" secondItem="f5H-Jm-oam" secondAttribute="leading" id="ufC-0m-aEq"/>
                                             </constraints>
                                         </tableViewCellContentView>

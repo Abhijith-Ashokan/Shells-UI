@@ -20,7 +20,11 @@
                             "Progress": 0.5,
                             "Description": "2022 | PG-13"
                         }
-                    ]
+                    ],
+             "CellSize": {
+                 "width": 108,
+                 "height": 176
+             }
                 },
                 {
                     "FeedName": "Favourites",
@@ -36,8 +40,11 @@
                             "Progress": 0.1,
                             "Description": "2016 | G"
                         }
-                    ]
-
+                    ],
+                    "CellSize": {
+                        "width": 150,
+                        "height": 200
+                        }
                 },
                 {
                     "FeedName": "Purchases",
@@ -59,7 +66,11 @@
                             "Progress": 0.8,
                             "Description": "EXP : 12/31"
                         }
-                    ]
+                    ],
+                    "CellSize": {
+                        "width": 108,
+                        "height": 176
+                        }
                 },
                 {
                     "FeedName": "Recordings",
@@ -68,7 +79,11 @@
                         "img": "",
                         "Progress": 0.8,
                         "Description": "S20"
-                    }]
+                    }],
+                    "CellSize": {
+                        "width": 108,
+                        "height": 176
+                        }
                 }
             ]
         },
@@ -94,7 +109,11 @@
                             "Progress": 0.5,
                             "Description": "2022 | PG-13"
                         }
-                    ]
+                    ],
+                    "CellSize": {
+                        "width": 108,
+                        "height": 176
+                        }
                 },
                 {
                     "FeedName": "Recently Aired",
@@ -110,7 +129,11 @@
                             "Progress": 0.1,
                             "Description": "Today 11.30 PM"
                         }
-                    ]
+                    ],
+                    "CellSize": {
+                        "width": 108,
+                        "height": 176
+                        }
 
                 },
                 {
@@ -133,9 +156,12 @@
                             "Progress": 0.8,
                             "Description": "EXP : 12/31"
                         }
-                    ]
-                },
-                
+                    ],
+                    "CellSize": {
+                        "width": 108,
+                        "height": 176
+                        }
+                }
             ]
         },
         {
@@ -160,7 +186,11 @@
                             "Progress": 0.5,
                             "Description": "2010 | R"
                         }
-                    ]
+                    ],
+                    "CellSize": {
+                        "width": 108,
+                        "height": 176
+                        }
                 },
                 {
                     "FeedName": "Purchases",
@@ -182,7 +212,11 @@
                             "Progress": 0.8,
                             "Description": "EXP : 12/31"
                         }
-                    ]
+                    ],
+                    "CellSize": {
+                        "width": 108,
+                        "height": 176
+                        }
                 },
                 {
                     "FeedName": "Recordings",
@@ -191,7 +225,11 @@
                         "img": "",
                         "Progress": 0.8,
                         "Description": "S20"
-                    }]
+                    }],
+                    "CellSize": {
+                        "width": 108,
+                        "height": 176
+                        }
                 }
             ]
         }

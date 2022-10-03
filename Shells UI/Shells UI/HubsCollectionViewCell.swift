@@ -13,7 +13,27 @@ class HubsCollectionViewCell: UICollectionViewCell{
 
     override var isSelected: Bool {
            didSet {
-               self.contentView.backgroundColor = isSelected ? UIColor.gray : UIColor.clear
-           }
+               let border = CALayer()
+               border.borderWidth = 3
+               border.frame = CGRect(x: 0, y: self.frame.size.height-1, width: self.frame.size.width, height: 1)
+               if isSelected{
+                    addSelectionBorder()
+               }
+               else{
+                   removeSelectionBorder()
+               }
+               func addSelectionBorder(){
+                   border.borderColor = UIColor.cyan.withAlphaComponent(1).cgColor
+                   self.layer.addSublayer(border)
+                   self.layer.masksToBounds = true
+               }
+               func removeSelectionBorder(){
+                   border.borderColor = UIColor.clear.withAlphaComponent(1).cgColor
+                   self.layer.addSublayer(border)
+                   self.layer.masksToBounds = true
+                   
+               }
+               
+            }
        }
 }
