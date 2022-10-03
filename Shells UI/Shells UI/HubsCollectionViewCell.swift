@@ -8,9 +8,9 @@
 import UIKit
 
 class HubsCollectionViewCell: UICollectionViewCell{
-    
-    @IBOutlet var hubs: UILabel!
 
+    @IBOutlet var hubs: UILabel!
+    
     override var isSelected: Bool {
            didSet {
                let border = CALayer()

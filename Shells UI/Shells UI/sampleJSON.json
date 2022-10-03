@@ -19,7 +19,26 @@
                             "img": "",
                             "Progress": 0.5,
                             "Description": "2022 | PG-13"
+                        },
+                        {
+                            "TitleName": "30 Rock",
+                            "img": "",
+                            "Progress": 0.1,
+                            "Description": "2019 | G"
+                        },
+                        {
+                            "TitleName": "Zindagi Na Milegi Dobara",
+                            "img": "",
+                            "Progress": 0.1,
+                            "Description": "2011 | PG-13"
+                        },
+                        {
+                            "TitleName": "13 Sins",
+                            "img": "",
+                            "Progress": 0.1,
+                            "Description": "2020 | G"
                         }
+                        
                     ],
              "CellSize": {
                  "width": 108,
@@ -43,7 +62,7 @@
                     ],
                     "CellSize": {
                         "width": 150,
-                        "height": 200
+                        "height": 180
                         }
                 },
                 {
@@ -84,6 +103,22 @@
                         "width": 108,
                         "height": 176
                         }
+                },
+                {
+                    "FeedName": "Reminders",
+                    "FeedItems": [],
+                    "CellSize": {
+                        "width": 108,
+                        "height": 176
+                        }
+                },
+                {
+                    "FeedName": "You Might Like",
+                    "FeedItems": [],
+                    "CellSize": {
+                        "width": 108,
+                        "height": 176
+                        }
                 }
             ]
         },
@@ -108,6 +143,18 @@
                             "img": "",
                             "Progress": 0.5,
                             "Description": "2022 | PG-13"
+                        },
+                        {
+                            "TitleName": "Van Der Valk",
+                            "img": "",
+                            "Progress": 0.1,
+                            "Description": "9 KQED"
+                        },
+                        {
+                            "TitleName": "Charmed",
+                            "img": "",
+                            "Progress": 0.5,
+                            "Description": "245 TNT-W"
                         }
                     ],
                     "CellSize": {
@@ -232,6 +279,77 @@
                         }
                 }
             ]
-        }
+        },
+        {
+            "HubName": "Catchups",
+            "HubData": [{
+                    "FeedName": "Catchup-News",
+                    "FeedItems": [{
+                            "TitleName": "NBC Bay Area News at 11 PM",
+                            "img": "",
+                                   "Progress": 0.0,
+                                   "Description": "Today 1:30 PM - 2.30 PM"
+                               },
+                               {
+                                   "TitleName": "KRON 4 News at 10pm",
+                                   "img": "",
+                                   "Progress": 0.1,
+                                   "Description": "Today 10.30 - 11:00 AM "
+                               }
+                               
+                           ],
+                    "CellSize": {
+                        "width": 108,
+                        "height": 176
+                    }
+                       },
+                       {
+                           "FeedName": "Catchup - Sports",
+                           "FeedItems": [{
+                                   "TitleName": "In Depth with Graham Bensinger",
+                                   "img": "",
+                                   "Progress": 0.0,
+                                   "Description": "3 KNTV Today 12.30 PM - 1:00 PM"
+                               },
+                               {
+                                   "TitleName": "Wacked Out SPORTS",
+                                   "img": "",
+                                   "Progress": 0.1,
+                                   "Description": "E1653"
+                               }
+                           ],
+                           "CellSize": {
+                               "width": 150,
+                               "height": 180
+                               }
+                       },
+                       {
+                           "FeedName": "Catchup - Comedy",
+                           "FeedItems": [{
+                                   "TitleName": "The Tonight Show starring Jimmy Fallon",
+                                   "img": "",
+                                   "Progress": 0.3,
+                                   "Description": "S10 E8"
+                               },
+                               {
+                                   "TitleName": "Oh Baby",
+                                   "img": "",
+                                   "Progress": 0.1,
+                                   "Description": "Yesterday 2:00 Am - 2:30 AM"
+                               },
+                               {
+                                   "TitleName": "The Big Bang Theory",
+                                   "img": "",
+                                   "Progress": 0.0,
+                                   "Description": "S3 E6"
+                               }
+                           ],
+                           "CellSize": {
+                               "width": 108,
+                               "height": 176
+                               }
+                       }
+                   ]
+               }
     ]
 
