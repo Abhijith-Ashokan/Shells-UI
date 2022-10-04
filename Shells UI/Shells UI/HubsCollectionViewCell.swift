@@ -33,7 +33,6 @@ class HubsCollectionViewCell: UICollectionViewCell{
                    self.layer.masksToBounds = true
                    
                }
-               
-            }
+           }
        }
 }

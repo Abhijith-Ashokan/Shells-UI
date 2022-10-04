@@ -38,7 +38,7 @@ extension feedsTableViewCell : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //for dynamic  cell size
         
-        return CGSize(width: (feeds?.CellSize["width"])!,height:(feeds?.CellSize["height"])!)
+        return CGSize(width: (feeds?.cellSize.width)!,height:(feeds?.cellSize.height)!)
     }
 }
 //titles collectionview delegate methods
